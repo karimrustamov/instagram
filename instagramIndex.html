@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finstergram</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <script src="instagramScript.js"></script>
+    <link rel="stylesheet" href="instagramStyle.css">
+</head>
+
+<body onload="render()">
+    <header>
+        <img id="logo" src="./instagramImg/finstergram.png" alt="Fintergram">
+        <input type="text" name="search" id="search" placeholder="Suchen">
+        <div id="headerIcons">
+            <img src="./instagramImg/house.png" alt="house">
+            <img src="./instagramImg/paperplane.png" alt="paperplane">
+            <img src="./instagramImg/compass.png" alt="compass">
+            <img src="./instagramImg/heart.png" alt="heart">
+            <img id="profilePic" src="./instagramImg/profile.jpg" alt="profile">
+        </div>
+    </header>
+    <div id="postContainer"></div>
+</body>
+
+</html>

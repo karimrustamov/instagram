@@ -1,0 +1,155 @@
+.img {
+    width: 640px;
+    height: 640px;
+}
+
+#logo {
+    width: 180px;
+    height: auto;
+    margin-left: 240px;
+}
+
+body {
+    background-color: rgb(240, 240, 240);
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#postContainer {
+    margin-left: 240px;
+    margin-right: 240px;
+    width: 640px;
+    margin-top: 3px;
+
+}
+
+#search {
+    height: 24px;
+    width: 200px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#headerIcons {
+    padding-right: 240px;
+}
+
+#headerIcons img {
+    width: 32px;
+    height: 32px;
+    padding-left: 16px;
+}
+
+#profilePic {
+    border-radius: 50%;
+}
+
+.post {
+    margin-bottom: 64px;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+.author {
+    font-weight: 900;
+    display: inline-block;
+    
+
+}
+
+.description {
+    display: inline-block;
+    margin-left: 4px;
+
+}
+
+.postText {
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+    margin-left: 24px;
+}
+
+#comment {
+    width: 100%;
+    height: 40px;             /* Beispielhöhe */
+    box-sizing: border-box;
+    resize: none;
+    outline: none;
+    line-height: 40px;        /* Sollte der Höhe des textarea entsprechen */
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;             /* Entfernt den Border */
+    overflow: auto;           /* Verhindert den Scrollbalken, es sei denn, es ist notwendig */
+}
+
+
+.postArea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left:24px;
+}
+
+
+
+
+.postArea button {
+    height: 32px;
+    border-style: none;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 900;
+    color: lightblue;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.aboveImg  img{
+    margin-left:24px;
+    width: 48px;
+    height: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+}
+
+.aboveImg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 24px;
+}
+
+#dots {
+    width: 24px;
+    height: auto;
+}
+
+.profileAboveImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 16px;
+}
+
+.aboveImgLeft {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.postArea button:hover {
+    cursor: pointer;
+    color: blue;
+    
+}
