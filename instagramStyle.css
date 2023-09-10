@@ -28,7 +28,6 @@ header {
     margin-right: 240px;
     width: 640px;
     margin-top: 3px;
-
 }
 
 #search {
@@ -56,71 +55,116 @@ header {
     margin-bottom: 64px;
     background-color: white;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-
 }
 
 .author {
     font-weight: 900;
     display: inline-block;
-    
-
 }
 
 .description {
     display: inline-block;
-    margin-left: 4px;
-
+    margin-left: 0;
 }
 
 .postText {
-    display: flex;
-    flex-direction: row;
+    display: block;
     margin-top: 8px;
     margin-left: 24px;
+    margin-right: 24px;
 }
 
-#comment {
-    width: 100%;
-    height: 40px;             /* Beispielhöhe */
+.postText .author {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.postText .description {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.allComments {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.allComments div {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.allComments div:before {
+    content: attr(data-author) " ";
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.comment {
+    width: 90%;
     box-sizing: border-box;
     resize: none;
     outline: none;
-    line-height: 40px;        /* Sollte der Höhe des textarea entsprechen */
-    padding-top: 0;
-    padding-bottom: 0;
-    border: none;             /* Entfernt den Border */
-    overflow: auto;           /* Verhindert den Scrollbalken, es sei denn, es ist notwendig */
+    line-height: 1.5;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
-
 
 .postArea {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left:24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    padding: 10px;
+    border-top: 1px solid #e6e6e6;
+    background-color: white;
 }
 
+.postArea input.user, .postArea textarea.comment {
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    resize: none;
+    height: 40px;
+}
 
+.postArea input.user {
+    flex: 1;
+}
 
+.postArea textarea.comment {
+    flex: 2.5;
+}
 
 .postArea button {
-    height: 32px;
-    border-style: none;
-    background-color: white;
-    font-size: 16px;
-    font-weight: 900;
-    color: lightblue;
-    padding-right: 16px;
-    padding-left: 16px;
+    height: 40px;
+    border: none;
+    background-color: #3897f0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    padding: 0 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.aboveImg  img{
-    margin-left:24px;
+.postArea button:hover {
+    background-color: #357ABD;
+}
+
+.aboveImg img {
+    margin-left: 24px;
     width: 48px;
     height: auto;
     margin-top: 16px;
     margin-bottom: 16px;
-
 }
 
 .aboveImg {
@@ -147,9 +191,11 @@ header {
     flex-direction: row;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-.postArea button:hover {
-    cursor: pointer;
-    color: blue;
-    
+input[type="text" i] {
+    padding: 0;
 }
