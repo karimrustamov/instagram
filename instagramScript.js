@@ -6,7 +6,11 @@ let posts = [
         'description': 'Quality time',
         'comments': ['Cool!'],
         'users': ['Momo'],
-        'timestamps': ['11.9.2023 14:21']
+        'timestamps': ['11.9.2023 14:21'],
+        'likes': 132,
+        'liked': false,
+        'likeSrc': './instagramImg/heart.png'
+
     },
     {
         'author': 'Anna Musterfrau',
@@ -15,7 +19,10 @@ let posts = [
         'description': 'Der Wahnsinn!',
         'comments': [],
         'users': [],
-        'timestamps': []
+        'timestamps': [],
+        'likes': 217,
+        'liked': false,
+        'likeSrc': './instagramImg/heart.png'
     },
     {
         'author': 'Murat Musterfa',
@@ -24,10 +31,19 @@ let posts = [
         'description': 'War schön, vor allem die Shishabar!',
         'comments': [],
         'users': [],
-        'timestamps': []
+        'timestamps': [],
+        'likes': 165,
+        'liked': false,
+        'likeSrc': './instagramImg/heart.png'
     }
 ];
 
+function load() {
+    let savedPosts = localStorage.getItem('posts');
+    if(savedPosts) {
+        posts = JSON.parse(savedPosts);
+    }
+}
 
 function render() {
     document.getElementById('postContainer').innerHTML = '';
@@ -49,6 +65,9 @@ function render() {
             </div>
             <img class="img" src="${post['image']}">
             <div class="postText">
+                <img class="likeUnderImg" id="like${i}" onclick="addLike(${i})" src="${post['likeSrc']}" alt="">
+                <a href="#"><img class="iconUnderImg" src="./instagramImg/paperplane.png" alt="paperplane"></a>
+                <div class="likeCounts" "id="likeCount${i}">Gefällt ${post['likes']} Mal</div>
                 <div class="author" >${post['author']}</div>
                 <div class="description" >${post['description']}</div>
                 <div class="allComments" id="allComments${i}"></div>
@@ -105,11 +124,24 @@ function save() {
     localStorage.setItem('posts', JSON.stringify(posts));
 }
 
-function load() {
-    let savedPosts = localStorage.getItem('posts');
-    if(savedPosts) {
-        posts = JSON.parse(savedPosts);
+
+function addLike(index) {
+    const likeButton = document.getElementById(`like${index}`);
+    
+    if (posts[index]['liked']) {
+        posts[index]['likes'] -= 1;
+        posts[index]['likeSrc'] = "./instagramImg/heart.png";
+        posts[index]['liked'] = false;
+    } else {
+        posts[index]['likes'] += 1;
+        posts[index]['likeSrc'] = "./instagramImg/heart_green.png";
+        posts[index]['liked'] = true;
     }
+    
+
+    
+    save();
+    render();
 }
 
 

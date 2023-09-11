@@ -62,6 +62,7 @@ header {
 }
 
 .author {
+    margin-top: 16px;
     font-weight: 900;
     display: inline-block;
 }
@@ -139,10 +140,14 @@ header {
 
 .postArea input.user {
     flex: 1;
+    padding-left: 4px;
 }
 
 .postArea textarea.comment {
     flex: 2.5;
+    text-align: start;
+    padding-top: 8px;
+    padding-left: 4px;
 }
 
 .postArea button {
@@ -440,4 +445,23 @@ body {
         max-height: 5rem;
         min-height: 2rem;
     }
+    .postArea input.user {
+        margin-bottom: 8px;
+    }
+
+    .postArea textArea.comment {
+        margin-bottom: 8px;
+    }
 }
+
+.iconUnderImg {
+    height: 32px;
+    width: 32px;
+}
+
+.likeUnderImg {
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+}
+
