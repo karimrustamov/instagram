@@ -5,7 +5,8 @@ let posts = [
         'location': 'Berlin, Germany',
         'description': 'Quality time',
         'comments': ['Cool!'],
-        'users': ['Momo']
+        'users': ['Momo'],
+        'timestamps': ['11.9.2023 14:21']
     },
     {
         'author': 'Anna Musterfrau',
@@ -13,7 +14,8 @@ let posts = [
         'location': 'München, Germany',
         'description': 'Der Wahnsinn!',
         'comments': [],
-        'users': []
+        'users': [],
+        'timestamps': []
     },
     {
         'author': 'Murat Musterfa',
@@ -21,7 +23,8 @@ let posts = [
         'location': 'Hamburg, Germany',
         'description': 'War schön, vor allem die Shishabar!',
         'comments': [],
-        'users': []
+        'users': [],
+        'timestamps': []
     }
 ];
 
@@ -64,8 +67,9 @@ function render() {
         for (let j = 0; j < post['comments'].length; j++) {
             const comment = post['comments'][j];
             const user = post['users'][j];
+            const timestamp = post['timestamps'][j];
 
-            commentContent.innerHTML += `<div><b>${user}:</b>&nbsp;${comment}</div>`;
+            commentContent.innerHTML += `<div class="OneComment"> <div class="UserWithComment"><b>${user}</b>: ${comment}</div> <div class="date">${timestamp}</div></div>`;
         }
     }
 }
@@ -79,10 +83,16 @@ function addComment(index) {
         return;
     }
 
+    let currentDate = new Date();
+    let formattedDate = `${currentDate.getDate()}.${currentDate.getMonth()+1}.${currentDate.getFullYear()} ${currentDate.getHours()}:${currentDate.getMinutes()}`;
+    
+
     posts[index]['comments'].push(input.value);
     posts[index]['users'].push(userName.value);
+    posts[index]['timestamps'].push(formattedDate);
 
 
     render();
     input.value = '';
+    userName.value = '';
 }

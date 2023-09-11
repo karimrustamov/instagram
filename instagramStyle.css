@@ -199,3 +199,18 @@ a {
 input[type="text" i] {
     padding: 0;
 }
+
+.OneComment {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.date {
+    color: rgb(192, 192, 192);
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+
+  
