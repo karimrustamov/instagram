@@ -17,10 +17,12 @@ body {
 
 header {
     background-color: white;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+    margin-bottom: 16px;
 }
 
 #postContainer {
@@ -49,6 +51,8 @@ header {
 
 #profilePic {
     border-radius: 50%;
+    padding-left: 0 !important;
+    margin-left: 16px !important;
 }
 
 .post {
@@ -97,7 +101,6 @@ header {
 .allComments div:before {
     content: attr(data-author) " ";
     font-weight: 600;
-    margin-right: 4px;
 }
 
 .comment {
@@ -212,5 +215,229 @@ input[type="text" i] {
     margin-left: auto;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+}
 
-  
+.container {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.profile-section {
+    flex: 2;
+    padding: 20px;
+}
+
+.profile-section .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.profile-section .profile-info {
+    text-align: center;
+}
+
+.suggestions-section {
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid #dbdbdb;
+}
+
+.suggestions-section h2 {
+    margin-bottom: 20px;
+}
+
+.suggestions-section .suggestion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.suggestions-section .suggestion img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.suggestions-section .suggestion p {
+    margin: 0;
+}
+
+#profiles {
+    position:absolute;
+    top:80px;
+    right:200px;
+    width: 500px;
+    
+
+}
+
+.suggestedProfile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.suggestedProfile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profileInfo {
+    flex-grow: 1;
+}
+
+.profileName {
+    font-weight: bold;
+}
+
+.followsYou {
+    font-style: italic;
+    color: grey;
+}
+
+.subscribeButton {
+    padding: 5px;
+    background-color: #3897f0;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+#profilePic {
+    width: 80px;
+    height: 80px;
+}
+
+
+@media (max-width: 1333px) {
+    #profiles {
+        position: relative;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: auto;
+    }
+}
+
+@media (max-width: 1333px) {
+    #profiles {
+        position: relative;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: auto;
+    }
+}
+
+@media (max-width: 1600px) {
+    #profiles {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1500px) {
+    #profiles {
+        width: 300px;
+    }
+}
+
+@media (max-width: 1400px) {
+    #profiles {
+        width: auto;
+    }
+}
+
+@media (max-width: 1150px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #logo {
+        margin-left: 0;
+        margin-top: 16px;
+    }
+
+    #search {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    
+    #headerIcons {
+        padding-right: 0;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 700px) {
+    #postContainer {
+        width: 90vw;
+    }
+
+    .img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+    }
+
+    .OneComment {
+        text-align: start;
+    }
+
+
+}
+
+@media (max-width: 500px) {
+    .date {
+        display: none !important;
+    }
+
+    .postArea {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .comment {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .comment {
+        max-height: 5rem;
+        min-height: 2rem;
+    }
+}

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="instagramStyle.css">
 </head>
 
-<body onload="render()">
+<body onload="load(); render();">
     <header>
         <a href="#"><img id="logo" src="./instagramImg/finstergram.png" alt="Fintergram"></a>
         <input type="search" name="search" id="search" placeholder="Suchen">
@@ -26,10 +26,44 @@
             <a href="#"><img src="./instagramImg/paperplane.png" alt="paperplane"></a>
             <a href="#"><img src="./instagramImg/compass.png" alt="compass"></a>
             <a href="#"><img src="./instagramImg/heart.png" alt="heart"></a>
-            <a href="#"><img id="profilePic" src="./instagramImg/profile.jpg" alt="profile"></a>
+            <a id="profile" href="#"><img  id="profilePic" src="./instagramImg/profile.jpg" alt="profile"></a>
         </div>
     </header>
     <div id="postContainer"></div>
+    <div id="profiles">
+        <h2 id="yourProfile">Dein Profil</h2>
+        <img  id="profilePic" src="./instagramImg/profile.jpg" alt="profile">
+        <div id="profileSuggestions">
+            <h3>Vorschläge für dich</h3>
+            
+            <div class="suggestedProfile">
+                <img src="./instagramImg/anonym.png" alt="Profilbild 1">
+                <div class="profileInfo">
+                    <span class="profileName">Caroline__</span> <br>
+                    <span class="followsYou">follows you</span>
+                </div>
+                <button class="subscribeButton">Abonnieren</button>
+            </div>
+            
+            <div class="suggestedProfile">
+                <img src="./instagramImg/anonym.png" alt="Profilbild 2">
+                <div class="profileInfo">
+                    <span class="profileName">Stefan</span> <br>
+                    <span class="followsYou">follows you</span>
+                </div>
+                <button class="subscribeButton">Abonnieren</button>
+            </div>
+            
+            <div class="suggestedProfile">
+                <img src="./instagramImg/anonym.png" alt="Profilbild 3">
+                <div class="profileInfo">
+                    <span class="profileName">Freddyyyyy</span> <br>
+                    <span class="followsYou">follows you</span>
+                </div>
+                <button class="subscribeButton">Abonnieren</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

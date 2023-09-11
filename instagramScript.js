@@ -49,7 +49,7 @@ function render() {
             </div>
             <img class="img" src="${post['image']}">
             <div class="postText">
-                <a href="#"><div class="author" >${post['author']}</div></a>
+                <div class="author" >${post['author']}</div>
                 <div class="description" >${post['description']}</div>
                 <div class="allComments" id="allComments${i}"></div>
             </div>
@@ -74,6 +74,11 @@ function render() {
     }
 }
 
+function minutes_with_leading_zeros(dt) { 
+    return (dt.getMinutes() < 10 ? '0' : '') + dt.getMinutes();
+}
+
+
 function addComment(index) {
     let input = document.getElementById(`comment${index}`);
     let userName = document.getElementById(`user${index}`);
@@ -84,15 +89,27 @@ function addComment(index) {
     }
 
     let currentDate = new Date();
-    let formattedDate = `${currentDate.getDate()}.${currentDate.getMonth()+1}.${currentDate.getFullYear()} ${currentDate.getHours()}:${currentDate.getMinutes()}`;
+    let formattedDate = `${currentDate.getDate()}.${currentDate.getMonth()+1}.${currentDate.getFullYear()} ${currentDate.getHours()}:${minutes_with_leading_zeros(currentDate)}`;
     
-
     posts[index]['comments'].push(input.value);
     posts[index]['users'].push(userName.value);
     posts[index]['timestamps'].push(formattedDate);
 
-
     render();
     input.value = '';
     userName.value = '';
+    save();
 }
+
+function save() {
+    localStorage.setItem('posts', JSON.stringify(posts));
+}
+
+function load() {
+    let savedPosts = localStorage.getItem('posts');
+    if(savedPosts) {
+        posts = JSON.parse(savedPosts);
+    }
+}
+
+
